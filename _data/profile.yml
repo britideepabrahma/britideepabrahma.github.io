@@ -37,18 +37,20 @@ terminal:
 
 # ── About (each item is a paragraph; **bold** works) ──
 about:
-  - "I'm a **DevOps Engineer (working student) at GMH Systems** while completing my **M.Sc. at Technische Universität Ilmenau**."
+  - "I'm a DevOps Engineer with **4+ years of hands-on experience** across enterprise and product teams. Currently I'm a **DevOps Engineer (working student) at GMH Systems** while completing my **M.Sc. at Technische Universität Ilmenau**."
   - "Before that I worked at **Accenture** on CI/CD in Azure DevOps, AKS, and Terraform/Ansible infrastructure across Azure and AWS, and at **Gartner** on Jenkins and Selenium automation and 24/7 monitoring."
   - "I like infrastructure that's defined in code, reviewed in pull requests, and boring to deploy."
 
 stats:
+  - value: "4+"
+    label: years hands-on DevOps
   - value: "3"
     label: companies
   - value: "2"
     label: clouds (Azure, AWS)
   - value: "3"
     label: live projects
-
+    
 # ── Tech stack ──
 stack:
   - category: Cloud
