@@ -67,7 +67,7 @@ stack:
     items: [Selenium, Smoke tests]
   - category: Systems & web
     items: [Linux, Nginx, Networking]
-    
+
 # ── Projects (copy a block to add a new one) ──
 projects:
   - name: GitOps URL Shortener
@@ -121,4 +121,4 @@ contact:
   text: I'm open to DevOps, Cloud, and Platform Engineering opportunities in Germany. Let's talk.
   linkedin: https://www.linkedin.com/in/britideepa/
   github: https://github.com/britideepabrahma
-  email: ""        # e.g. "you@example.com" (leave empty to hide the button)
+  email: "britideepabrahma@gmail.com"
