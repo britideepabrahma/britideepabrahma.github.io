@@ -1,0 +1,120 @@
+# ─────────────────────────────────────────────
+#  Edit this file to update your site.
+#  Rules: keep the indentation (2 spaces), and
+#  put text with a colon ( : ) inside "quotes".
+# ─────────────────────────────────────────────
+
+name: Britideepa Brahma
+first_name: Britideepa
+title: DevOps Engineer
+logo: "~/britideepa"
+accent_color: "#3ddc97"        # change the whole site's highlight color here
+avatar: https://avatars.githubusercontent.com/u/358717094?v=4
+
+# ── Hero ──
+availability: Open to DevOps, Cloud & Platform roles in Germany
+headline: I keep software
+headline_accent: shipping.
+intro: >-
+  DevOps Engineer building CI/CD pipelines, automating cloud infrastructure,
+  and running containerized workloads on Azure and AWS.
+
+# ── Terminal animation (top right) ──
+terminal:
+  - cmd: whoami
+    out: britideepa · devops engineer · germany
+  - cmd: kubectl get skills
+    out: |
+      NAME         STATUS
+      ci-cd        Ready
+      kubernetes   Ready
+      terraform    Ready
+      monitoring   Ready
+  - cmd: terraform apply career.tf
+    out: |
+      Plan: 1 new role to add.
+      Apply complete! Waiting for your offer…
+
+# ── About (each item is a paragraph; **bold** works) ──
+about:
+  - "I'm a **DevOps Engineer (working student) at GMH Systems** while completing my **M.Sc. at Technische Universität Ilmenau**."
+  - "Before that I worked at **Accenture** on CI/CD in Azure DevOps, AKS, and Terraform/Ansible infrastructure across Azure and AWS, and at **Gartner** on Jenkins and Selenium automation and 24/7 monitoring."
+  - "I like infrastructure that's defined in code, reviewed in pull requests, and boring to deploy."
+
+stats:
+  - value: "3"
+    label: companies
+  - value: "2"
+    label: clouds (Azure, AWS)
+  - value: "3"
+    label: live projects
+
+# ── Tech stack ──
+stack:
+  - category: Cloud
+    items: [Azure, AWS, Cloudflare Workers]
+  - category: CI/CD
+    items: [Azure DevOps, GitHub Actions, Jenkins]
+  - category: Containers
+    items: [Docker, Kubernetes]
+  - category: IaC & config
+    items: [Terraform, Ansible]
+  - category: Monitoring
+    items: [Prometheus, Grafana]
+  - category: Scripting & tools
+    items: [Python, Bash, JavaScript, Linux, Nginx, Git]
+
+# ── Projects (copy a block to add a new one) ──
+projects:
+  - name: GitOps URL Shortener
+    description: >-
+      Serverless URL shortener on Cloudflare Workers and KV, with all infrastructure
+      and links managed in Terraform. Pull requests show a formatted plan summary;
+      merging applies the changes and runs a smoke test.
+    tags: [Terraform, Cloudflare Workers, HCP Terraform, GitHub Actions]
+    demo: https://go.britideepa.workers.dev
+    demo_label: Live demo
+    code: https://github.com/britideepabrahma/url-shortener
+
+  - name: Uptime Monitor
+    description: >-
+      Serverless uptime monitoring with GitHub Actions: scheduled health checks,
+      automatic incident tracking via GitHub Issues, and a live status page with
+      uptime and response-time history.
+    tags: [Python, GitHub Actions, GitHub Pages, Chart.js]
+    demo: https://britideepabrahma.github.io/uptime-monitor/
+    demo_label: Status page
+    code: https://github.com/britideepabrahma/uptime-monitor
+
+  - name: DevOps Status Dashboard
+    description: >-
+      Containerized dashboard showing Docker container health, host metrics, and CI
+      pipeline runs. Every commit is linted, built, smoke-tested, and published as a
+      live status page.
+    tags: [Python, Flask, Docker Compose, Prometheus]
+    demo: https://britideepabrahma.github.io/devops-dashboard/
+    demo_label: Live demo
+    code: https://github.com/britideepabrahma/devops-dashboard
+
+# ── Experience (newest first) ──
+experience:
+  - role: DevOps Engineer (Working Student)
+    company: GMH Systems GmbH
+    period: 2024 — present
+    description: ""
+  - role: Application Development Associate
+    company: Accenture
+    period: 2021 — 2022
+    description: CI/CD in Azure DevOps, AKS management, Terraform and Ansible IaC on Azure and AWS.
+  - role: Product and Services Intern
+    company: Gartner
+    period: 2020 — 2021
+    description: Jenkins and Selenium automation, CI/CD with Azure DevOps, 24/7 monitoring.
+
+# ── Contact ──
+contact:
+  heading: Looking for a DevOps engineer?
+  text: I'm open to DevOps, Cloud, and Platform Engineering opportunities in Germany. Let's talk.
+  linkedin: https://www.linkedin.com/in/britideepa/
+  github: https://github.com/britideepabrahma
+  email: ""        # e.g. "you@example.com" (leave empty to hide the button)

@@ -1,0 +1,144 @@
+---
+---
+{%- assign p = site.data.profile -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ site.title }}</title>
+<meta name="description" content="{{ site.description | escape }}">
+<meta property="og:title" content="{{ site.title | escape }}">
+<meta property="og:description" content="{{ site.description | escape }}">
+<meta property="og:image" content="{{ p.avatar }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<style>:root{--accent:{{ p.accent_color | default: '#3ddc97' }}}</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">{{ p.logo }}</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary">Hire me</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="badge"><span class="dot"></span> {{ p.availability | escape }}</div>
+      <h1>Hi, I'm {{ p.first_name }}.<br>{{ p.headline }} <span>{{ p.headline_accent }}</span></h1>
+      <p class="lead">{{ p.intro | escape }}</p>
+      <div class="cta">
+        <a href="#contact" class="btn btn-primary">Let's talk →</a>
+        <a href="#projects" class="btn btn-ghost">See my work</a>
+      </div>
+    </div>
+    <div class="terminal" aria-hidden="true">
+      <div class="term-bar"><i></i><i></i><i></i></div>
+      <div class="term-body" id="term"></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap reveal">
+    <div class="label">// about</div>
+    <h2>A bit about me</h2>
+    <div class="about-grid">
+      <img src="{{ p.avatar }}" alt="{{ p.name }}">
+      <div>
+        {% for para in p.about %}{{ para | markdownify }}{% endfor %}
+        <div class="stats">
+          {% for s in p.stats %}<div><b>{{ s.value }}</b>{{ s.label }}</div>{% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap reveal">
+    <div class="label">// stack</div>
+    <h2>What I work with</h2>
+    <div class="grid">
+      {% for group in p.stack %}
+      <div class="card">
+        <h3>{{ group.category | escape }}</h3>
+        <div class="chips">{% for item in group.items %}<span class="chip">{{ item }}</span>{% endfor %}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap reveal">
+    <div class="label">// projects</div>
+    <h2>Things I've built</h2>
+    <div class="grid projects">
+      {% for project in p.projects %}
+      <div class="card">
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.description | escape }}</p>
+        <div class="chips">{% for t in project.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div>
+        <div class="links">
+          {% if project.demo %}<a href="{{ project.demo }}" target="_blank" rel="noopener">{{ project.demo_label | default: 'Live demo' }} ↗</a>{% endif %}
+          {% if project.code %}<a href="{{ project.code }}" target="_blank" rel="noopener">Code ↗</a>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap reveal">
+    <div class="label">// experience</div>
+    <h2>Where I've worked</h2>
+    <div class="timeline">
+      {% for job in p.experience %}
+      <div class="job">
+        <div class="when">{{ job.period }}</div>
+        <h3>{{ job.role }}</h3>
+        <div class="org">{{ job.company }}</div>
+        {% if job.description != "" %}<p>{{ job.description | escape }}</p>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap reveal">
+    <div class="label">// contact</div>
+    <h2>{{ p.contact.heading }}</h2>
+    <p>{{ p.contact.text | escape }}</p>
+    <div class="cta">
+      {% if p.contact.linkedin %}<a href="{{ p.contact.linkedin }}" target="_blank" rel="noopener" class="btn btn-primary">Message me on LinkedIn</a>{% endif %}
+      {% if p.contact.email != "" %}<a href="mailto:{{ p.contact.email }}" class="btn btn-ghost">Email</a>{% endif %}
+      {% if p.contact.github %}<a href="{{ p.contact.github }}" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>{% endif %}
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> {{ p.name }}</span>
+    <span>Deployed on GitHub Pages</span>
+  </div>
+</footer>
+
+<script>window.TERMINAL = {{ p.terminal | jsonify }};</script>
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
