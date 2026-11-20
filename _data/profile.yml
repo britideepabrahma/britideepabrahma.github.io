@@ -62,8 +62,12 @@ stack:
   - category: Monitoring
     items: [Prometheus, Grafana]
   - category: Scripting & tools
-    items: [Python, Bash, JavaScript, Linux, Nginx, Git]
-
+    items: [Python, Bash, JavaScript, Git]
+  - category: Testing & automation
+    items: [Selenium, Smoke tests]
+  - category: Systems & web
+    items: [Linux, Nginx, Networking]
+    
 # ── Projects (copy a block to add a new one) ──
 projects:
   - name: GitOps URL Shortener
